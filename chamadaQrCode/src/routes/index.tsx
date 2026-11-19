@@ -7,6 +7,19 @@ import { Register } from "../screens/Register";
 export type PublicStackParamsList = {
     Login: undefined;
     Register: undefined;
+    Professor: undefined;
+    Turmas: undefined;
+    Aluno: undefined;
+    ExibirQRCode: undefined;
+    LerQRCode: undefined;
+    Turma: undefined;
+    Historic: undefined;
+    Disciplina: undefined;
+    Aula: undefined;
+    Chamada: undefined;
+    Frequencia: undefined;
+    
+
 }
 
 export function NavigationRoutes () {
