@@ -37,7 +37,7 @@ export const Login = () => {
         <View className="items-center justify-center p-[15]">
           <View className="">
             <Text className="font-poppins text-gray-700">
-              Email-institucional
+              Email institucional:
             </Text>
             <TextInput
               placeholder="mail@example.br"
@@ -45,14 +45,14 @@ export const Login = () => {
             ></TextInput>
           </View>
           <View className="p-[15]">
-            <Text className="font-poppins text-gray-700">Senha</Text>
+            <Text className="font-poppins text-gray-700">Senha:</Text>
             <TextInput
               placeholder="******"
               className="w-[320px] h-[55px] bg-gray-100 border rounded-[15] border-gray-500 pl-4"
             ></TextInput>
         <View className="items-end pt-2">
           <TouchableOpacity>
-            <Text className="font-poppins-bold text-blue-600">Esqueci minha senha</Text>
+            <Text className="font-poppins-bold text-blue-600">Esqueci minha senha.</Text>
           </TouchableOpacity>
         </View>
           </View>
@@ -78,7 +78,7 @@ export const Login = () => {
             className=" "
           >
             <Text className="text-blue-600 font-poppins-bold">
-              Ative a sua conta
+              Ative a sua conta.
             </Text>
           </TouchableOpacity>
         </View>
