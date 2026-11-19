@@ -2,11 +2,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator} from "@react-navigation/stack"
 import { Login } from "../screens/Login";
 import { Register } from "../screens/Register";
+import { AtivarConta } from "../screens/AtivarConta/Ativarconta";
+import {AtivacaoConta} from "../screens/AtivacaoConta/AtivacaoConta"
 
 
 export type PublicStackParamsList = {
     Login: undefined;
     Register: undefined;
+    AtivarConta: undefined;
+    AtivacaoConta : undefined;
     Professor: undefined;
     Turmas: undefined;
     Aluno: undefined;
@@ -33,6 +37,8 @@ export function NavigationRoutes () {
             }}>
                 <PublicStack.Screen name="Login" component={Login}/>
                 <PublicStack.Screen name="Register" component={Register}/>
+                <PublicStack.Screen name="AtivarConta" component={AtivarConta}/>
+                <PublicStack.Screen name="AtivacaoConta" component={AtivacaoConta}/>
             </PublicStack.Navigator>
         </NavigationContainer>
     )

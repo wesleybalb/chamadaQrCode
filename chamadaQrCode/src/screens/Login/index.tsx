@@ -74,7 +74,7 @@ export const Login = () => {
             </Text>
           </View>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Register")}
+            onPress={() => navigation.navigate("AtivarConta")}
             className=" "
           >
             <Text className="text-blue-600 font-poppins-bold">
