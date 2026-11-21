@@ -4,6 +4,7 @@ import { Login } from "../screens/Login";
 import { Register } from "../screens/Register";
 import { AtivarConta } from "../screens/AtivarConta/Ativarconta";
 import {AtivacaoConta} from "../screens/AtivacaoConta/AtivacaoConta"
+import { Professor } from "../screens/Professor";
 
 
 export type PublicStackParamsList = {
@@ -39,6 +40,8 @@ export function NavigationRoutes () {
                 <PublicStack.Screen name="Register" component={Register}/>
                 <PublicStack.Screen name="AtivarConta" component={AtivarConta}/>
                 <PublicStack.Screen name="AtivacaoConta" component={AtivacaoConta}/>
+                <PublicStack.Screen name="Professor" component={Professor}/>
+
             </PublicStack.Navigator>
         </NavigationContainer>
     )

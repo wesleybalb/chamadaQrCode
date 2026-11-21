@@ -1,15 +1,21 @@
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { PublicStackParamsList } from "../../routes";
 
-export const AtivarConta = () =>{
-    const navigation =
-      useNavigation<StackNavigationProp<PublicStackParamsList>>();
+export const AtivarConta = () => {
+  const navigation =
+    useNavigation<StackNavigationProp<PublicStackParamsList>>();
 
-    return(
-        <>
-        <View className="flex-1 bg-blue-600 items-center ">
+  return (
+    <View className="flex-1 bg-blue-600 items-center ">
       <View className="h-50 items-center justify-center pt-8 pb-3">
         <Image
           source={require("../../img/vaca.png")}
@@ -23,15 +29,17 @@ export const AtivarConta = () =>{
         </Text>
       </View>
 
-        <View className=" bg-white rounded-t-[25] w-full flex-1 items-center font-poppins">
+      <View className=" bg-white rounded-t-[25] w-full flex-1 items-center font-poppins">
         <View className="h-[55px] items-center justify-center bg-gray-200 flex-row rounded-[20] w-[320px] mt-[32px]">
           <View className="w-[160px] justify-center text-center h-[55px] rounded-[20] items-center ">
             <TouchableOpacity>
               <Text className="text-black font-poppins">Professor</Text>
             </TouchableOpacity>
           </View>
-          <View className="w-[160px] h-[55px]
-          justify-center rounded-[20] bg-blue-600 items-center">
+          <View
+            className="w-[160px] h-[55px]
+          justify-center rounded-[20] bg-blue-600 items-center"
+          >
             <TouchableOpacity>
               <Text className="text-white font-poppins-bold">Aluno</Text>
             </TouchableOpacity>
@@ -47,7 +55,9 @@ export const AtivarConta = () =>{
           </View>
 
           <View className="pt-[15]">
-            <Text className="font-poppins text-gray-700">Email institucional:</Text>
+            <Text className="font-poppins text-gray-700">
+              Email institucional:
+            </Text>
             <TextInput
               placeholder="mail@example.br"
               keyboardType="email-address"
@@ -84,8 +94,9 @@ export const AtivarConta = () =>{
           </View>
 
           <TouchableOpacity
-        onPress={() => navigation.navigate("AtivacaoConta")}
-          className="mt-[25px] w-[320px] h-[55px] bg-blue-600 rounded-[15] justify-center items-center">
+            onPress={() => navigation.navigate("AtivacaoConta")}
+            className="mt-[25px] w-[320px] h-[55px] bg-blue-600 rounded-[15] justify-center items-center"
+          >
             <Text className="font-poppins-bold text-white">Ativar conta</Text>
           </TouchableOpacity>
 
@@ -96,9 +107,7 @@ export const AtivarConta = () =>{
             </TouchableOpacity>
           </View>
         </ScrollView>
-        </View>
-        </View>
-        </>
-    )
-    
-}
+      </View>
+    </View>
+  );
+};

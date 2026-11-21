@@ -59,7 +59,7 @@ export const Login = () => {
           <View>
             <TouchableOpacity
               className="p-[15] w-[320] h-[55] bg-blue-600 rounded-[15] justify-center items-center  "
-              onPress={() => navigation.navigate("Login")}
+              onPress={() => navigation.navigate("Professor")}
             >
               {/*ATENÇÃO:  TEMOS QUE ALTERAR NO NAVIGATE PARA QUE A NAVIGATION FAÇA O LOGIN DE ACORDO COM A CREDENCIAL. ACHO ATÉ QUE DÁ PRA EXCLUIR O BOTÃO PROFESSOR / ALUNO. A ROTA DEVE CONSEGUIR FAZER ESSA DISTINÇÃO PELO QUE ME PARECE */}
               <Text className="font-poppins-bold text-white">Entrar</Text>
