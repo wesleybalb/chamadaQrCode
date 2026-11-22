@@ -1,8 +1,6 @@
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
 import { LinearGradient } from "expo-linear-gradient";
 import { FlatList, Text, TextInput, View, Image } from "react-native";
-import { PublicStackParamsList } from "../../routes";
+
 import { Disciplinas } from "../../components/disciplinas";
 
 type Props = {
@@ -16,9 +14,6 @@ type Props = {
 };
 
 export const Professor = () => {
-  const navigation =
-    useNavigation<StackNavigationProp<PublicStackParamsList>>();
-
   const insertList = [
     {
       id: 1,
