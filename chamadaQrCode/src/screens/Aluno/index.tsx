@@ -1,9 +1,15 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "../../shared/colors";
 import { DisciplinasMatriculadas } from "../../components/DisciplinasMatriculadas";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationEventMap, StackNavigationProp } from "@react-navigation/stack";
+import { PublicStackParamsList } from "../../routes";
 
 export const Aluno = () => {
+
+  const navigation = useNavigation<StackNavigationProp<PublicStackParamsList>>()
+
   const insertList = [
     {
       id: 1,
@@ -71,6 +77,7 @@ export const Aluno = () => {
                 <Text className="font-bold">4 disciplinas</Text>
               </Text>
             </View>
+            <TouchableOpacity onPress={() =>{navigation.navigate("ExibirQrCode")}}>
             <LinearGradient
               colors={["#2563EB", "#1E3A5F"]}
               start={{ x: 0, y: 0.5 }}
@@ -92,14 +99,16 @@ export const Aluno = () => {
                 />
               </View>
               <View>
-                <Text className=" font-poppins-bold text-white text-[16px] text-center">
-                  Seu QR Code
-                </Text>
+                  <Text className=" font-poppins-bold text-white text-[16px] text-center">
+                    Seu QR Code
+                  </Text>
+
                 <Text className="font-poppins text-blue-100 text-[12px]">
                   Mostre ao professor para registrar a presença
                 </Text>
               </View>
             </LinearGradient>
+            </TouchableOpacity>
           </View>
         </View>
         <View

@@ -8,6 +8,7 @@ import { Professor } from "../screens/Professor";
 import { Aluno } from "../screens/Aluno";
 import { Turma } from "../screens/Turma";
 import { Aula } from "../screens/Aula";
+import { ExibirQrCode } from "../screens/ExibirQrCode";
 
 export type PublicStackParamsList = {
   Login: undefined;
@@ -17,7 +18,7 @@ export type PublicStackParamsList = {
   Professor: undefined;
   Turmas: undefined;
   Aluno: undefined;
-  ExibirQRCode: undefined;
+  ExibirQrCode: undefined;
   LerQRCode: undefined;
   Turma: {
     title: string;
@@ -63,6 +64,7 @@ export function NavigationRoutes() {
         <PublicStack.Screen name="Turma" component={Turma} />
         <PublicStack.Screen name="Aula" component={Aula} />
         <PublicStack.Screen name="Aluno" component={Aluno} />
+        <PublicStack.Screen name="ExibirQrCode" component={ExibirQrCode}/>
       </PublicStack.Navigator>
     </NavigationContainer>
   );

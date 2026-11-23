@@ -90,14 +90,14 @@ export const Professor = () => {
           <View className="pt-[15px] pb-5">
             <TextInput
               placeholder="Buscar Turma"
-              className="w-auto h-auto bg-gray-100 border-gray-500 border rounded-[15]"
+              className="p-20 w-auto h-auto bg-gray-100 border-gray-500 border rounded-[15]"
             ></TextInput>
           </View>
         </View>
       </View>
-      <View className="flex-1 p-5 bg-blue-200">
+      <View className="flex-1 bg-blue-200">
         <FlatList
-          className="flex-1"
+          className="flex-1 p-20"
           data={insertList}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
