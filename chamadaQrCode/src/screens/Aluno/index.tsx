@@ -121,14 +121,19 @@ export const Aluno = () => {
             data={insertList}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-              <DisciplinasMatriculadas
-                title={item.title}
-                sigla={item.sigla}
-                diaSemana={item.diaSemana}
-                horaInicio={item.horaInicio}
-                horaFim={item.horaFim}
-                frequencia={item.frequencia}
-              />
+              <TouchableOpacity onPress={() => {navigation.navigate("Frequencia", {
+                sigla: item.sigla
+              })
+              }}>
+                <DisciplinasMatriculadas
+                  title={item.title}
+                  sigla={item.sigla}
+                  diaSemana={item.diaSemana}
+                  horaInicio={item.horaInicio}
+                  horaFim={item.horaFim}
+                  frequencia={item.frequencia}
+                />
+              </TouchableOpacity>
             )}
           />
         </View>

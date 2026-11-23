@@ -13,6 +13,7 @@ import { LerQRCode } from "../screens/LerQRCode";
 import { Chamada } from "../screens/Chamada";
 import { ChamadaDetalhe } from "../screens/ChamadaDetalhe";
 import { typeAluno } from "../types/typeAluno";
+import { Frequencia } from "../screens/Frequencia";
 
 export type PublicStackParamsList = {
   Login: undefined;
@@ -51,7 +52,9 @@ export type PublicStackParamsList = {
     title: string;
     totalAlunos: number;
   };
-  Frequencia: undefined;
+  Frequencia: {
+    sigla: string;
+  },
   ChamadaDetalhe: {
     title: string;
     totalAlunos: number;
@@ -82,6 +85,7 @@ export function NavigationRoutes() {
         <PublicStack.Screen name="LerQRCode" component={LerQRCode} />
         <PublicStack.Screen name="Chamada" component={Chamada} />
         <PublicStack.Screen name="ChamadaDetalhe" component={ChamadaDetalhe} />
+        <PublicStack.Screen name="Frequencia" component={Frequencia}/>
       </PublicStack.Navigator>
     </NavigationContainer>
   );
