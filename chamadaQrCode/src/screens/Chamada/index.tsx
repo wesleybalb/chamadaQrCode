@@ -109,9 +109,9 @@ export const Chamada = () => {
               keyExtractor={(item) => item.id.toString()}
               showsVerticalScrollIndicator={false}
               contentContainerClassName="bg-white rounded-2xl overflow-hidden"
-              ItemSeparatorComponent={() => (
+              ItemSeparatorComponent={ 
                 <View className="h-px bg-gray-300 mx-4" />
-              )}
+              }
               renderItem={({ item }) => (
                 <View className="flex-row items-center px-4 py-3 gap-3">
                   <Image
@@ -158,9 +158,9 @@ export const Chamada = () => {
               keyExtractor={(item) => item.id.toString()}
               showsVerticalScrollIndicator={false}
               contentContainerClassName="bg-white rounded-2xl overflow-hidden"
-              ItemSeparatorComponent={() => (
+              ItemSeparatorComponent={
                 <View className="h-px bg-gray-300 mx-4" />
-              )}
+              }
               renderItem={({ item }) => (
                 <View className="flex-row items-center px-4 py-3 gap-3">
                   <Image
