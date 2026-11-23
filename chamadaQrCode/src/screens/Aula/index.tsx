@@ -2,15 +2,16 @@ import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { PublicStackParamsList } from "../../routes";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useState } from "react";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 const DIAS_SEMANA = [
-  "Domingo",
-  "Segunda-Feira",
-  "Terça-Feira",
-  "Quarta-Feira",
-  "Quinta-Feira",
-  "Sexta-Feira",
-  "Sábado",
+  "Dom",
+  "Seg",
+  "Ter",
+  "Qua",
+  "Qui",
+  "Sex",
+  "Sáb",
 ];
 
 const MESES = [
@@ -27,6 +28,7 @@ const MESES = [
   "Novembro",
   "Dezembro",
 ];
+
 
 // Horário de Brasília (America/Sao_Paulo): UTC-3, sem horário de verão desde 2019.
 const OFFSET_BRASILIA_MS = -3 * 60 * 60 * 1000;
@@ -47,6 +49,9 @@ const formatarHora = (data: Date) => {
 export const Aula = () => {
   const { params } = useRoute<RouteProp<PublicStackParamsList, "Aula">>();
   const [agora] = useState(() => new Date());
+
+  const navigation =
+    useNavigation<StackNavigationProp<PublicStackParamsList>>();
 
   return (
     <View className="flex-1">
@@ -74,7 +79,9 @@ export const Aula = () => {
           <View className="">
             <View className="bg-gray-100 border border-gray-400 rounded-[15] h-32">
               <View className="pl-5 pt-3">
-                <Text className="font-poppins text-gray-700">Turma Selecionada</Text>
+                <Text className="font-poppins text-gray-700">
+                  Turma Selecionada
+                </Text>
               </View>
               <View className="flex-row pl-5 items-center">
                 <View className="items-center pt-2">
@@ -86,7 +93,7 @@ export const Aula = () => {
                 <View className="pl-5 ">
                   <Text className="font-poppins-bold ">{params.title}</Text>
                   <Text className="font-poppins text-[12px] text-gray-700">
-                    {params.sigla} - {params.totalAlunos} alunos matriculados 
+                    {params.sigla} - {params.totalAlunos} alunos matriculados
                   </Text>
                 </View>
               </View>
@@ -95,7 +102,9 @@ export const Aula = () => {
           <View className="pt-14">
             <View className="bg-gray-100 border border-gray-400 rounded-[15] h-64 pl-5 pt-5">
               <View className="">
-                <Text className="font-poppins text-gray-700">Data e Horário da Aula</Text>
+                <Text className="font-poppins text-gray-700">
+                  Data e Horário da Aula
+                </Text>
               </View>
               <View className="flex-row flex-1 items-center">
                 <View className="h-auto items-center">
@@ -105,7 +114,9 @@ export const Aula = () => {
                   />
                 </View>
                 <View className="pl-5 ">
-                  <Text className="font-poppins-bold ">{formatarData(agora)}</Text>
+                  <Text className="font-poppins-bold ">
+                    {formatarData(agora)}
+                  </Text>
                   <Text className="text-blue-600 font-poppins-bold text-[12px]">
                     Iniciando às {formatarHora(agora)}
                   </Text>
@@ -113,17 +124,22 @@ export const Aula = () => {
               </View>
               <View className="justify-end items-baseline pb-3 pr-3 flex-row">
                 <View className="w-[100%] h-[35px] bg-gray-200 rounded-lg items-center justify-center flex-row">
-                    <Text className="font-poppins text-gray-700">Número da aula no semestre </Text>
-                    <Text className="font-poppins-bold text-blue-600">Aula 23</Text>
+                  <Text className="font-poppins text-gray-700">
+                    Número da aula no semestre{" "}
+                  </Text>
+                  <Text className="font-poppins-bold text-blue-600">
+                    Aula 23
+                  </Text>
                 </View>
               </View>
             </View>
           </View>
           <View className="pt-14 ">
             <View className="border h-[120px] rounded-lg p-5 border-gray-600 justify-center">
-                <Text className="font-poppins">
-                    Os alunos devem apresentar seus QR Codes na Câmera. Cada código é escaneado apenas uma vez por aula.
-                </Text>
+              <Text className="font-poppins">
+                Os alunos devem apresentar seus QR Codes na Câmera. Cada código
+                é escaneado apenas uma vez por aula.
+              </Text>
             </View>
           </View>
         </View>
@@ -131,16 +147,21 @@ export const Aula = () => {
           <TouchableOpacity
             className="w-auto h-[55px] bg-blue-600 rounded-lg justify-center items-center"
             onPress={() => {
-              navigation.navigate("Register");
+              navigation.navigate("LerQRCode",{
+                title: params.title,
+                totalAlunos: params.totalAlunos,
+              });
             }}
-          ><View className="flex-row items-center ">
-            <Image source={require('../../img/icons/scan-qr-code.png')}
-            className="w-14 h-14 pr-5"/>
-            <Text className="pl-5 font-poppins-bold text-white">
-              Iniciar Escaneamento
-            </Text>
-
-          </View>
+          >
+            <View className="flex-row items-center ">
+              <Image
+                source={require("../../img/icons/scan-qr-code.png")}
+                className="w-14 h-14 pr-5"
+              />
+              <Text className="pl-5 font-poppins-bold text-white">
+                Iniciar Escaneamento
+              </Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>

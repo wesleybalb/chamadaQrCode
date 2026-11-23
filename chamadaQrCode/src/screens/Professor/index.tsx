@@ -3,15 +3,7 @@ import { FlatList, Text, TextInput, View, Image } from "react-native";
 
 import { Disciplinas } from "../../components/disciplinas";
 
-type Props = {
-  title: string;
-  sigla: string;
-  diaDaSemana: string;
-  horaInicio: string;
-  horaFinal: string;
-  local: string;
-  totalAlunos: number;
-};
+
 
 export const Professor = () => {
   const insertList = [

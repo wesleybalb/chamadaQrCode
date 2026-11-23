@@ -8,6 +8,12 @@ import { Professor } from "../screens/Professor";
 import { Aluno } from "../screens/Aluno";
 import { Turma } from "../screens/Turma";
 import { Aula } from "../screens/Aula";
+import { LerQRCode } from "../screens/LerQRCode";
+import { Chamada } from "../screens/Chamada";
+import { ChamadaDetalhe } from "../screens/ChamadaDetalhe";
+import { typeAluno } from "../types/typeAluno";
+
+
 
 export type PublicStackParamsList = {
   Login: undefined;
@@ -18,7 +24,10 @@ export type PublicStackParamsList = {
   Turmas: undefined;
   Aluno: undefined;
   ExibirQRCode: undefined;
-  LerQRCode: undefined;
+  LerQRCode: {
+    title: string;
+    totalAlunos: number;
+  };
   Turma: {
     title: string;
     sigla: string;
@@ -39,15 +48,22 @@ export type PublicStackParamsList = {
     local: string;
     totalAlunos: number;
   };
-  Chamada: undefined;
+  Chamada: {
+    title: string;
+    totalAlunos: number;
+  };
   Frequencia: undefined;
+  ChamadaDetalhe: {
+    title: string;
+    totalAlunos: number;
+    alunosPresentes: typeAluno[];
+    alunosAusentes: typeAluno[];
+  };
 };
 
-
+const PublicStack = createStackNavigator<PublicStackParamsList>();
 
 export function NavigationRoutes() {
-  const PublicStack = createStackNavigator<PublicStackParamsList>();
-
   return (
     <NavigationContainer>
       <PublicStack.Navigator
@@ -63,6 +79,9 @@ export function NavigationRoutes() {
         <PublicStack.Screen name="Turma" component={Turma} />
         <PublicStack.Screen name="Aula" component={Aula} />
         <PublicStack.Screen name="Aluno" component={Aluno} />
+        <PublicStack.Screen name="LerQRCode" component={LerQRCode} />
+        <PublicStack.Screen name="Chamada" component={Chamada} />
+        <PublicStack.Screen name="ChamadaDetalhe" component={ChamadaDetalhe} />
       </PublicStack.Navigator>
     </NavigationContainer>
   );

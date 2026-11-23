@@ -5,15 +5,6 @@ import { AulasRealizadasList } from "../../components/data/AulasRealizadasList";
 import { AulasRealizadas } from "../../components/AulasRealizadas";
 import { StackNavigationProp } from "@react-navigation/stack";
 
-type Props = {
-  title: string;
-  sigla: string;
-  diaSemana: string;
-  horaInicio: string;
-  horaFim: string;
-  local: string;
-  totalAlunos: number;
-};
 
 export const Turma = () => {
   const { params } = useRoute<RouteProp<PublicStackParamsList, "Turma">>();

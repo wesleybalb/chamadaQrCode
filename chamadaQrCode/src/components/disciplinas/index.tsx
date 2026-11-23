@@ -22,6 +22,7 @@ export function Disciplinas({
   local,
   totalAlunos,
 }: Readonly<Props>) {
+  
   const navigation =
     useNavigation<StackNavigationProp<PublicStackParamsList>>();
 
